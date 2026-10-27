@@ -1,0 +1,373 @@
+/* nasze CSS */
+.banner {
+  background: linear-gradient(100deg, green, red);
+  color: white;
+  padding: 35px;
+  border-radius: 15px;
+  margin: 20px;
+  text-align: center;
+}
+
+.banner h2{
+  font-size: 26px;
+  margin-bottom: 10px;
+}
+.banner p{
+  font-size: 16px;
+}
+
+.menu-kontener {
+  margin: 20px 0;
+}
+
+.menu{
+  background-color: #174147;
+  padding: 15px;
+  border-radius: 15px;
+}
+.menu > ul{
+  display: flex;
+  gap: 20px;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+.menu li{
+  list-style: none;
+}
+
+.menu button{
+  padding: 10px 18px;
+  background: #285258;
+  color: white;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  font-size: 15px;
+}
+
+.submenu{
+  display: none;
+  background: #654654;
+  padding: 12px;
+  margin-top: 8px;
+  border-radius: 8px;
+}
+.submenu li{
+  padding: 7px 12px;
+  border-radius: 6px;
+}
+
+.submenu li.submenu-item{
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+.submenu li.submenu-item:hover{
+  background-color: #7d5467;
+}
+
+.instrukcja-panel {
+  display: none;
+  background-color: #174147;
+  border: 1px solid #285258;
+  border-radius: 15px;
+  padding: 24px;
+  margin-top: 15px;
+  text-align: left;
+  color: #f3f4f6;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.25);
+}
+
+.instrukcja-panel h3 {
+  margin: 0 0 16px 0;
+  font-size: 22px;
+  color: #5eead4;
+  border-bottom: 1px solid #285258;
+  padding-bottom: 10px;
+}
+
+.instrukcja-panel ol {
+  padding-left: 22px;
+  margin: 0 0 20px 0;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.instrukcja-panel li {
+  line-height: 1.5;
+  font-size: 15px;
+  color: #e5e7eb;
+}
+
+.instrukcja-panel li strong {
+  color: #ffffff;
+}
+
+.instrukcja-panel .zamknij-instrukcje-btn {
+  padding: 10px 20px;
+  background-color: #285258;
+  color: #ffffff;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  font-size: 14px;
+  font-weight: 600;
+  display: inline-block;
+}
+
+/* Sekcja galerii zdjęć */
+.galeria-sekcja {
+  margin: 30px 20px;
+  background: #174147;
+  padding: 25px;
+  border-radius: 15px;
+  text-align: left;
+  color: white;
+}
+
+.galeria-naglowek {
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+.galeria-naglowek h3 {
+  margin: 0 0 8px 0;
+  font-size: 24px;
+  color: #5eead4;
+}
+
+.galeria-naglowek p {
+  color: #d1d5db;
+  font-size: 14px;
+}
+
+.galeria-filtry {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  justify-content: center;
+  margin-bottom: 25px;
+}
+
+.galeria-filtr-btn {
+  padding: 8px 16px;
+  background: #285258;
+  color: #e5e7eb;
+  border: 1px solid #376a72;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 14px;
+  transition: all 0.2s ease;
+}
+
+.galeria-filtr-btn:hover {
+  background: #396f77;
+}
+
+.galeria-filtr-btn.aktywny {
+  background: #5eead4;
+  color: #0b2428;
+  font-weight: 600;
+  border-color: #5eead4;
+}
+
+.galeria-siatka {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(210px, 1fr));
+  gap: 16px;
+}
+
+.galeria-karta {
+  background: #1f5057;
+  border-radius: 10px;
+  overflow: hidden;
+  cursor: pointer;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+  display: flex;
+  flex-direction: column;
+}
+
+.galeria-karta:hover {
+  transform: translateY(-4px) scale(1.02);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.4);
+}
+
+.galeria-karta img {
+  width: 100%;
+  height: 150px;
+  object-fit: cover;
+  display: block;
+  background: #0f2c31;
+}
+
+.galeria-karta-opis {
+  padding: 10px 12px;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.galeria-karta-tytul {
+  font-size: 13px;
+  font-weight: 500;
+  color: #f3f4f6;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.galeria-karta-kategoria {
+  font-size: 11px;
+  text-transform: uppercase;
+  color: #5eead4;
+  letter-spacing: 0.5px;
+}
+
+/* Modal lightbox dla powiększonego zdjęcia */
+.galeria-modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(8, 15, 18, 0.92);
+  backdrop-filter: blur(4px);
+  z-index: 9999;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  box-sizing: border-box;
+}
+
+.galeria-modal-zawartosc {
+  position: relative;
+  max-width: 900px;
+  width: 100%;
+  background: #174147;
+  border: 1px solid #285258;
+  border-radius: 15px;
+  padding: 20px;
+  box-shadow: 0 16px 40px rgba(0, 0, 0, 0.6);
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.galeria-modal-zamknij {
+  position: absolute;
+  top: 10px;
+  right: 15px;
+  background: none;
+  border: none;
+  color: #fff;
+  font-size: 32px;
+  line-height: 1;
+  cursor: pointer;
+  z-index: 10;
+  padding: 4px 8px;
+  transition: color 0.2s ease, transform 0.2s ease;
+}
+
+.galeria-modal-zamknij:hover {
+  color: #ef4444;
+  transform: scale(1.15);
+}
+
+.galeria-modal-podglad {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  min-height: 300px;
+  max-height: 65vh;
+}
+
+.galeria-modal-img {
+  max-width: 100%;
+  max-height: 60vh;
+  object-fit: contain;
+  border-radius: 8px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.5);
+  display: block;
+}
+
+.galeria-modal-nav {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: rgba(23, 65, 71, 0.85);
+  color: #5eead4;
+  border: 1px solid #3a6b73;
+  border-radius: 50%;
+  width: 44px;
+  height: 44px;
+  font-size: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  user-select: none;
+}
+
+.galeria-modal-nav:hover {
+  background: #5eead4;
+  color: #0b2428;
+  transform: translateY(-50%) scale(1.1);
+}
+
+.galeria-modal-prev {
+  left: 10px;
+}
+
+.galeria-modal-next {
+  right: 10px;
+}
+
+.galeria-modal-pasek {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 12px;
+  border-top: 1px solid #285258;
+  padding-top: 12px;
+}
+
+.galeria-modal-info h4 {
+  margin: 0;
+  font-size: 18px;
+  color: #fff;
+}
+
+.galeria-modal-licznik {
+  font-size: 13px;
+  color: #5eead4;
+}
+
+.galeria-auto-btn {
+  padding: 8px 16px;
+  background: #285258;
+  color: #fff;
+  border: 1px solid #376a72;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 13px;
+  font-weight: 500;
+  transition: all 0.2s ease;
+}
+
+.galeria-auto-btn:hover {
+  background: #396f77;
+}
+
+.galeria-auto-btn.aktywne {
+  background: #10b981;
+  border-color: #10b981;
+  color: #fff;
+}
