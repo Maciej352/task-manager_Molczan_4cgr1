@@ -38,7 +38,7 @@ if ($ && $.Tween && $.Tween.propHooks && !$.Tween.propHooks.backgroundColor) {
     };
 }
 
-function Menu() {
+function Menu({ onZmienWidok }) {
     const zadaniaRef = useRef(null);
     const ustawieniaRef = useRef(null);
     const pomocRef = useRef(null);
@@ -120,7 +120,7 @@ function Menu() {
         const kliknieciePozaMenu = (e) => {
             if (
                 menuRef.current && !menuRef.current.contains(e.target)
-            ){
+            ) {
                 setOtwarteMenu(null);
             }
         };
@@ -154,9 +154,33 @@ function Menu() {
                         </button>
 
                         <ul className="submenu" ref={zadaniaRef}>
-                            <li>Wszystkie zadania</li>
-                            <li>Dodaj zadanie</li>
-                            <li>Statystyki</li>
+                            <li
+                                className="submenu-item"
+                                role="button"
+                                tabIndex={0}
+                                onClick={() => onZmienWidok("wszystkie")}
+                                onKeyDown={(e) => { if (e.key === "Enter" || e.key === " ") onZmienWidok("wszystkie"); }}
+                            >
+                                Wszystkie zadania
+                            </li>
+                            <li
+                                className="submenu-item"
+                                role="button"
+                                tabIndex={0}
+                                onClick={() => onZmienWidok("dodaj")}
+                                onKeyDown={(e) => { if (e.key === "Enter" || e.key === " ") onZmienWidok("dodaj"); }}
+                            >
+                                Dodaj zadanie
+                            </li>
+                            <li
+                                className="submenu-item"
+                                role="button"
+                                tabIndex={0}
+                                onClick={() => onZmienWidok("statystyki")}
+                                onKeyDown={(e) => { if (e.key === "Enter" || e.key === " ") onZmienWidok("statystyki"); }}
+                            >
+                                Statystyki
+                            </li>
                         </ul>
                     </li>
 

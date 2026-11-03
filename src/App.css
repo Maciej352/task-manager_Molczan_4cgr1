@@ -371,3 +371,27 @@
   border-color: #10b981;
   color: #fff;
 }
+
+/* Widok placeholder po kliknięciu przycisku w submenu */
+.widok-placeholder {
+  background: #174147;
+  border: 1px solid #285258;
+  border-radius: 15px;
+  padding: 30px;
+  margin: 20px 0;
+  text-align: center;
+  color: #f3f4f6;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
+
+.widok-placeholder h2 {
+  margin: 0 0 12px 0;
+  font-size: 24px;
+  color: #5eead4;
+}
+
+.widok-placeholder p {
+  font-size: 16px;
+  color: #d1d5db;
+  margin: 0;
+}
